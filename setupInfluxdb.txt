@@ -1,0 +1,21 @@
+Install influxdbV2
+
+See https://pimylifeup.com/raspberry-pi-influxdb/
+
+
+http://pi3.home:8086/orgs/7b40321bda46f440/new-user-setup/python
+
+Check version of python3 (python3 --version) or Install python3 
+
+Install pip3
+sudo apt install python3-pip
+
+Install influxdb python api
+
+pip3 install influxdb-client --break-system-packages
+
+
+-- grafana
+
+install using https://grafana.com/tutorials/install-grafana-on-raspberry-pi/ 
+
