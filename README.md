@@ -4,7 +4,7 @@
 
 Simple IOT transaction store for use on a home network. Only one port needs to be exposed via a firewall rule. For simplicity and to reducing functional complexity I run this on a dedicated microcontroler, hopefully, this makes hacking via the exposed port more difficult and reduces possible exposure to unknown code running on the device. IOTCache stores IOT transactions submitted using HTTP post (with json) or get (With query). Transaction can be retrieved using a simple HTTP read request for use in upstream applications.
 
-IOTCache is part of my IOT suite for my home network that includes IOTCache, IOTSensor and IOT UI (Python, influxDB and Grafana system)
+IOTCache is part of my IOT suite for my home network that includes IOTCache, IOTSensor and IOT UI (Python data loader and web services and a postgresql DB)
 
 ![image info](./iotCache.jpg)
 
