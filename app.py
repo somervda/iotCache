@@ -162,6 +162,21 @@ async def getIOT(request):
         return iotData
     return "None"
 
+@app.get('/status/<int:id>')
+async def getStatus(request,id):
+    # Return content of a particular file
+    try:
+        with open('data/' + str(id) + '.json', 'r') as file:
+            fileContents = json.load(file)
+        return fileContents
+    except:
+        return "File " + str(id) + ".json not found",404
+
+@app.get('/status')
+async def getStatus(request):
+    # Return list of files in the data directory
+    return os.listdir("data")
+
 
 print("*** starting ***")
 # If using ssl 
