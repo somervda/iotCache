@@ -122,7 +122,9 @@ async def getHello(request):
 
 @app.post('/write')
 async def writeIOTPost(request):
+    print("writeIOTPost:",request)
     iotData = request.json
+    print("writeIOTPost:",iotData)
     result = writeIOTData(iotData)
     if result=="Ok":
         return result, 200
