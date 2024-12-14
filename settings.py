@@ -22,7 +22,7 @@ class Settings:
         return self._settings.get("NTP","")
 
     def getPORT(self):
-        return self._settings.get("PORT","37007")
+        return self._settings.get("PORT","80")
 
     def getUSERS(self):
         return self._settings.get("USERS",[])

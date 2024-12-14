@@ -12,6 +12,8 @@ import os
 # to make values unique within a second
 _sequence = 0
 
+print("starting app..")
+
 
 
 def getUniqueTimestamp(timestamp):
@@ -85,6 +87,7 @@ while not wlan.isconnected() and wlan.status() >= 0:
 
 time.sleep(2)
 print("Connected! IP Address = " + wlan.ifconfig()[0])
+
 # Short delay before getting ntp time
 # There is a known timing bug with this so try again
 # if it fails.
@@ -118,7 +121,7 @@ app = Microdot()
 # define iotLogger services
 @app.route('/hello')
 async def getHello(request):
-    return 'Ok'
+    return 'Ok ' + str(time.localtime())
 
 @app.post('/write')
 async def writeIOTPost(request):

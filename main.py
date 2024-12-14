@@ -1,4 +1,6 @@
 from machine import Pin
+import time
+import sys
 
 button = Pin(15, Pin.IN, Pin.PULL_UP)
 
@@ -7,5 +9,13 @@ button = Pin(15, Pin.IN, Pin.PULL_UP)
 # then app.py is not run and you can work with the python files.
 # if button.value() == 1:   
 if button.value() == 0:
-    import app
-
+    try:
+        import app
+    except Exception as e:
+        print("Exception: Restarting",e)
+        f=open('exception.txt', 'a')  
+        f.write(str(time.localtime()) + "\n")
+        sys.print_exception(e,f)
+        f.close()
+        time.sleep(2)
+        machine.reset()
