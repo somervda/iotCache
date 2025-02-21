@@ -158,9 +158,13 @@ async def getIOT(request):
     if not user in settings.getUSERS():
         return "Invalid User"
     for fileName in os.listdir("data"):
-        with open("data/" + fileName, "r") as iotDataFile:
-            iotData = json.load(iotDataFile)
-        # print (iotData)
+        try:
+            with open("data/" + fileName, "r") as iotDataFile:
+                iotData = json.load(iotDataFile)
+            print (iotData)
+        except:
+            iotData="None"
+            print("Failed to read IOT file: data/" + fileName)
         os.remove("data/" + fileName)
         return iotData
     return "None"
